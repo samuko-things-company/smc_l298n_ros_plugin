@@ -1,0 +1,9 @@
+<library path="smc_ros_hw_plugin">
+  <class name="smc_ros_hw_plugin/SMCDriverHardware"
+         type="smc_ros_hw_plugin::SMCDriverHardware"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      The ros2 hardware interface plugin package for the smc_driver_module
+    </description>
+  </class>
+</library>
