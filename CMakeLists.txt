@@ -24,12 +24,14 @@ endforeach()
 add_library(
   smc_ros_hw_plugin
   SHARED
-  hardware/smc_ros_hw_plugin.cpp
+  src/smc_ros_hw_plugin.cpp
 )
+
 target_compile_features(smc_ros_hw_plugin PUBLIC cxx_std_17)
+
 target_include_directories(smc_ros_hw_plugin PUBLIC
-$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/hardware/include>
-$<INSTALL_INTERFACE:include/smc_ros_hw_plugin>
+$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+$<INSTALL_INTERFACE:include/${PROJECT_NAME}>
 )
 ament_target_dependencies(
   smc_ros_hw_plugin PUBLIC
@@ -47,7 +49,7 @@ pluginlib_export_plugin_description_file(hardware_interface smc_ros_hw_plugin.xm
 
 # INSTALL
 install(
-  DIRECTORY hardware/include/
+  DIRECTORY include/
   DESTINATION include/smc_ros_hw_plugin
 )
 
