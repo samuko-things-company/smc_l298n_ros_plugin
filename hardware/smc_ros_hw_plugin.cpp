@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "smc_ros2_hw_plugin/smc_ros2_hw_plugin.hpp"
+#include "smc_ros_hw_plugin/smc_ros_hw_plugin.hpp"
 
 #include <chrono>
 #include <cmath>
@@ -30,7 +30,7 @@ void delay_ms(unsigned long milliseconds) {
 }
 
 
-namespace smc_ros2_hw_plugin
+namespace smc_ros_hw_plugin
 {
 hardware_interface::CallbackReturn SMCDriverHardware::on_init(
   const hardware_interface::HardwareInfo & info)
@@ -222,7 +222,7 @@ hardware_interface::return_type SMCDriverHardware::read(
   return hardware_interface::return_type::OK;
 }
 
-hardware_interface::return_type smc_ros2_hw_plugin ::SMCDriverHardware::write(
+hardware_interface::return_type smc_ros_hw_plugin ::SMCDriverHardware::write(
   const rclcpp::Time & /*time*/, const rclcpp::Duration & /*period*/)
 {
   if (!smc_.connected())
@@ -240,8 +240,8 @@ hardware_interface::return_type smc_ros2_hw_plugin ::SMCDriverHardware::write(
   return hardware_interface::return_type::OK;
 }
 
-}  // namespace smc_ros2_hw_plugin
+}  // namespace smc_ros_hw_plugin
 
 #include "pluginlib/class_list_macros.hpp"
 PLUGINLIB_EXPORT_CLASS(
-  smc_ros2_hw_plugin::SMCDriverHardware, hardware_interface::SystemInterface)
+  smc_ros_hw_plugin::SMCDriverHardware, hardware_interface::SystemInterface)

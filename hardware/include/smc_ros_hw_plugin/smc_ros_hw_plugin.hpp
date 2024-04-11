@@ -31,11 +31,11 @@
 #include "rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp"
 #include "rclcpp_lifecycle/state.hpp"
 
-#include "smc_ros2_hw_plugin/visibility_control.h"
-#include "smc_ros2_hw_plugin/smc_cppserial_lib.hpp"
-#include "smc_ros2_hw_plugin/motor.hpp"
+#include "smc_ros_hw_plugin/visibility_control.h"
+#include "smc_ros_hw_plugin/smc_cppserial_lib.hpp"
+#include "smc_ros_hw_plugin/motor.hpp"
 
-namespace smc_ros2_hw_plugin
+namespace smc_ros_hw_plugin
 {
 class SMCDriverHardware : public hardware_interface::SystemInterface
 {
@@ -93,6 +93,6 @@ private:
   Motor motorB_; // motorB setup
 };
 
-}  // namespace smc_ros2_hw_plugin
+}  // namespace smc_ros_hw_plugin
 
 #endif  // SMC_ROS_HW_PLUGIN_HPP
