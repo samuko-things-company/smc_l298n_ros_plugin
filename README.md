@@ -1,12 +1,14 @@
-## How to Use the Package
-- ensure you've already set up your microcomputer or PC system with `ros-humble` with colcon and your ros workspace also setup
+> **NOTE:** should be used with your computer or microcomputer robotics project running on linux `Ubuntu 22.04` [ros-Humble] (e.g Raspberry Pi, PC, etc.)
 
-- install the libserial-dev package on your linux machine
+## How to Use the Package
+- ensure you've already set up your microcomputer or PC system with `ros-humble` with `colcon` and your `ros workspace` also setup
+
+- install the `libserial-dev` package on your linux machine
   > ```sudo apt-get update```
   >
   > ```sudo apt install libserial-dev```
 
-- install rosdep so you can install necessary ros related dependencies for the package.
+- install `rosdep` so you can install necessary ros related dependencies for the package.
   > ```sudo apt-get update```
   >
   > ```sudo apt install python3-rosdep2```
