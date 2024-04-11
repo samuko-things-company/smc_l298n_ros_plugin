@@ -1,28 +1,42 @@
-# smc_ros_hw_plugin
-This is a child project of the Samuko Motor Control (**`smc`**) project. This is to be used with **Ubuntu 22.04 (ros-humble)** in your linux-based microcomputer **ROS2** mobile robotic project (as it depends on the libserial-dev linux package) to communicate with the **`smc_l298n_pid_driver module`** in order to send target angular velocities to the motors or receive the motor's angular velocity and angular position, after successful velocity PID setup with the [**`smc_setup_application`**](https://github.com/samuko-things-company/smc_setup_application).
-
-> **NOTE:** should be used with your microcomputer robotics project running on linux Ubuntu 22.04 [ros-Humble] (e.g Raspberry Pi, PC, etc.)
-
-
 ## How to Use the Package
 - ensure you've already set up your microcomputer or PC system with `ros-humble` with colcon and your ros workspace also setup
 
 - install the libserial-dev package on your linux machine
-  > sudo apt-get update
+  > ```sudo apt-get update```
   >
-  > sudo apt install libserial-dev
+  > ```sudo apt install libserial-dev```
+
+- install rosdep so you can install necessary ros related dependencies for the package.
+  > ```sudo apt-get update```
+  >
+  > ```sudo apt install python3-rosdep2```
+  >
+  > ```rosdep update```
 
 - In the src/ folder of your ros workspace, clone the repo (or you can download and add it manually to the src/ folder)
-  > ```git clone https://github.com/samuko-things-company/smc_ros_hw_plugin.git```
+  > ```git clone -b humble https://github.com/samuko-things-company/smc_ros_hw_plugin.git```
 
-- build the packages with colcon (in your ros workspace root folder):
-  > ```colcon build --packages-select smc_ros_hw_plugin``
+- cd into the package folder (i.e `smc_ros_hw_plugin`) and run rosdep to install any necessary ros dependencies
+  > ```cd smc_ros_hw_plugin```
   >
-  > **NOTE:** the **smc_ros_hw_plugin** hardware interface will now be available for use in any project in your ros workspace.
-  > 
-  > *check the **`sample_smc_ros_hw_plugin_file`** in the **`smc_ros_hw_plugin`** pkg file to see the sample xacro file you can use in your own URDF controller file (for a differential drive robot)*
+  > ```rosdep install --from-paths src --ignore-src -r -y```
 
-- check the [**`smc_test_bot`**](https://github.com/samuko-things-company/smc_test_bot) pkg to see a sample robot to test the smc driver module.
+- build the packages with colcon (in the root folder of your ros workspace):
+  > ```colcon build --packages-select smc_ros_hw_plugin```
+
+  > **NOTE:** the **smc_ros_hw_plugin** hardware interface will now be available for use in any project in your ros workspace.
+
+- finally, don't forget to source your ros workspace
+
+</br>
+
+> *check the **`example_file`** in the **`smc_ros_hw_plugin`** pkg file to see the sample xacro file you can use in your own URDF controller file (for a differential drive robot)*
+>
+> AND
+>
+> check the [**`smc_test_bot`**](https://github.com/samuko-things-company/smc_test_bot) pkg to see a sample robot to test the smc driver module.
+
+</br>
 
 ## Check connection of your driver module
 - ensure the **`smc_l298n_pid_driver`** module (with the motors connected and fully set up for velocity PID) is connected to the microcomputer or PC via USB.
