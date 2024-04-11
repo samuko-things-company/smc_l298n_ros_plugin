@@ -1,11 +1,11 @@
 # smc_ros_hw_plugin
-This is a child project of the Samuko Motor Control (**`smc`**) project. This is to be used with **Ubuntu 22.04 (ros2 humble)** in your linux-based microcomputer **ROS2** mobile robotic project (as it depends on the libserial-dev linux package) to communicate with the **`smc_l298n_pid_driver module`** in order to send target angular velocities to the motors or receive the motor's angular velocity and angular position, after successful velocity PID setup with the [**`smc_app`**](https://github.com/samuko-things-company/smc_app).
+This is a child project of the Samuko Motor Control (**`smc`**) project. This is to be used with **Ubuntu 22.04 (ros-humble)** in your linux-based microcomputer **ROS2** mobile robotic project (as it depends on the libserial-dev linux package) to communicate with the **`smc_l298n_pid_driver module`** in order to send target angular velocities to the motors or receive the motor's angular velocity and angular position, after successful velocity PID setup with the [**`smc_setup_application`**](https://github.com/samuko-things-company/smc_setup_application).
 
-> **NOTE:** should be used with your microcomputer robotics project running on linux Ubuntu 22.04 [ROS2 Humble] (e.g Raspberry Pi, PC, etc.)
+> **NOTE:** should be used with your microcomputer robotics project running on linux Ubuntu 22.04 [ros-Humble] (e.g Raspberry Pi, PC, etc.)
 
 
 ## How to Use the Package
-- ensure you've already set up your microcomputer or PC system with ros2-humble with colcon and your ros workspace also setup
+- ensure you've already set up your microcomputer or PC system with `ros-humble` with colcon and your ros workspace also setup
 
 - install the libserial-dev package on your linux machine
   > sudo apt-get update
@@ -22,7 +22,7 @@ This is a child project of the Samuko Motor Control (**`smc`**) project. This is
   > 
   > *check the **`sample_smc_ros_hw_plugin_file`** in the **`smc_ros_hw_plugin`** pkg file to see the sample xacro file you can use in your own URDF controller file (for a differential drive robot)*
 
-- check the [**`smc_diff_bot`**](https://github.com/samuko-things-company/smc_diff_bot) pkg to see a sample use case to test the driver module.
+- check the [**`smc_test_bot`**](https://github.com/samuko-things-company/smc_test_bot) pkg to see a sample robot to test the smc driver module.
 
 ## Check connection of your driver module
 - ensure the **`smc_l298n_pid_driver`** module (with the motors connected and fully set up for velocity PID) is connected to the microcomputer or PC via USB.
