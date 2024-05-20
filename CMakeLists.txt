@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(smc_ros_hw_plugin LANGUAGES CXX)
+project(smc_l298n_ros_plugin LANGUAGES CXX)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "(GNU|Clang)")
   add_compile_options(-Wall -Wextra)
@@ -22,39 +22,39 @@ endforeach()
 
 ## COMPILE
 add_library(
-  smc_ros_hw_plugin
+  smc_l298n_ros_plugin
   SHARED
-  src/smc_ros_hw_plugin.cpp
+  src/smc_l298n_ros_plugin.cpp
 )
 
-target_compile_features(smc_ros_hw_plugin PUBLIC cxx_std_17)
+target_compile_features(smc_l298n_ros_plugin PUBLIC cxx_std_17)
 
-target_include_directories(smc_ros_hw_plugin PUBLIC
+target_include_directories(smc_l298n_ros_plugin PUBLIC
 $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
 $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
 )
 ament_target_dependencies(
-  smc_ros_hw_plugin PUBLIC
+  smc_l298n_ros_plugin PUBLIC
   ${THIS_PACKAGE_INCLUDE_DEPENDS}
 )
 
-target_link_libraries(smc_ros_hw_plugin PUBLIC serial)
+target_link_libraries(smc_l298n_ros_plugin PUBLIC serial)
 
 # Causes the visibility macros to use dllexport rather than dllimport,
 # which is appropriate when building the dll but not consuming it.
-target_compile_definitions(${PROJECT_NAME} PRIVATE "SMC_ROS_HW_PLUGIN_BUILDING_DLL")
+target_compile_definitions(${PROJECT_NAME} PRIVATE "SMC_L298N_ROS_PLUGIN_BUILDING_DLL")
 
 # Export hardware plugins
-pluginlib_export_plugin_description_file(hardware_interface smc_ros_hw_plugin.xml)
+pluginlib_export_plugin_description_file(hardware_interface smc_l298n_ros_plugin.xml)
 
 # INSTALL
 install(
   DIRECTORY include/
-  DESTINATION include/smc_ros_hw_plugin
+  DESTINATION include/smc_l298n_ros_plugin
 )
 
-install(TARGETS smc_ros_hw_plugin
-  EXPORT export_smc_ros_hw_plugin
+install(TARGETS smc_l298n_ros_plugin
+  EXPORT export_smc_l298n_ros_plugin
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
@@ -65,6 +65,6 @@ if(BUILD_TESTING)
 endif()
 
 ## EXPORTS
-ament_export_targets(export_smc_ros_hw_plugin HAS_LIBRARY_TARGET)
+ament_export_targets(export_smc_l298n_ros_plugin HAS_LIBRARY_TARGET)
 ament_export_dependencies(${THIS_PACKAGE_INCLUDE_DEPENDS})
 ament_package()

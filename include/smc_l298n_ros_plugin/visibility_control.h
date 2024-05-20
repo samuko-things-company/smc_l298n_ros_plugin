@@ -19,38 +19,38 @@
  * library cannot have, but the consuming code must have inorder to link.
  */
 
-#ifndef SMC_ROS_HW_PLUGIN__VISIBILITY_CONTROL_H
-#define SMC_ROS_HW_PLUGIN__VISIBILITY_CONTROL_H
+#ifndef SMC_L298N_ROS_PLUGIN__VISIBILITY_CONTROL_H
+#define SMC_L298N_ROS_PLUGIN__VISIBILITY_CONTROL_H
 
 // This logic was borrowed (then namespaced) from the examples on the gcc wiki:
 //     https://gcc.gnu.org/wiki/Visibility
 
 #if defined _WIN32 || defined __CYGWIN__
 #ifdef __GNUC__
-#define SMC_ROS_HW_PLUGIN_EXPORT __attribute__((dllexport))
-#define SMC_ROS_HW_PLUGIN_IMPORT __attribute__((dllimport))
+#define SMC_L298N_ROS_PLUGIN_EXPORT __attribute__((dllexport))
+#define SMC_L298N_ROS_PLUGIN_IMPORT __attribute__((dllimport))
 #else
-#define SMC_ROS_HW_PLUGIN_EXPORT __declspec(dllexport)
-#define SMC_ROS_HW_PLUGIN_IMPORT __declspec(dllimport)
+#define SMC_L298N_ROS_PLUGIN_EXPORT __declspec(dllexport)
+#define SMC_L298N_ROS_PLUGIN_IMPORT __declspec(dllimport)
 #endif
-#ifdef SMC_ROS_HW_PLUGIN_BUILDING_DLL
-#define SMC_ROS_HW_PLUGIN_PUBLIC SMC_ROS_HW_PLUGIN_EXPORT
+#ifdef SMC_L298N_ROS_PLUGIN_BUILDING_DLL
+#define SMC_L298N_ROS_PLUGIN_PUBLIC SMC_L298N_ROS_PLUGIN_EXPORT
 #else
-#define SMC_ROS_HW_PLUGIN_PUBLIC SMC_ROS_HW_PLUGIN_IMPORT
+#define SMC_L298N_ROS_PLUGIN_PUBLIC SMC_L298N_ROS_PLUGIN_IMPORT
 #endif
-#define SMC_ROS_HW_PLUGIN_PUBLIC_TYPE SMC_ROS_HW_PLUGIN_PUBLIC
-#define SMC_ROS_HW_PLUGIN_LOCAL
+#define SMC_L298N_ROS_PLUGIN_PUBLIC_TYPE SMC_L298N_ROS_PLUGIN_PUBLIC
+#define SMC_L298N_ROS_PLUGIN_LOCAL
 #else
-#define SMC_ROS_HW_PLUGIN_EXPORT __attribute__((visibility("default")))
-#define SMC_ROS_HW_PLUGIN_IMPORT
+#define SMC_L298N_ROS_PLUGIN_EXPORT __attribute__((visibility("default")))
+#define SMC_L298N_ROS_PLUGIN_IMPORT
 #if __GNUC__ >= 4
-#define SMC_ROS_HW_PLUGIN_PUBLIC __attribute__((visibility("default")))
-#define SMC_ROS_HW_PLUGIN_LOCAL __attribute__((visibility("hidden")))
+#define SMC_L298N_ROS_PLUGIN_PUBLIC __attribute__((visibility("default")))
+#define SMC_L298N_ROS_PLUGIN_LOCAL __attribute__((visibility("hidden")))
 #else
-#define SMC_ROS_HW_PLUGIN_PUBLIC
-#define SMC_ROS_HW_PLUGIN_LOCAL
+#define SMC_L298N_ROS_PLUGIN_PUBLIC
+#define SMC_L298N_ROS_PLUGIN_LOCAL
 #endif
-#define SMC_ROS_HW_PLUGIN_PUBLIC_TYPE
+#define SMC_L298N_ROS_PLUGIN_PUBLIC_TYPE
 #endif
 
-#endif  // SMC_ROS_HW_PLUGIN__VISIBILITY_CONTROL_H_
+#endif  // SMC_L298N_ROS_PLUGIN__VISIBILITY_CONTROL_H_

@@ -4,7 +4,7 @@
     <ros2_control name="smc_diff_drive" type="system">
 
       <hardware>
-        <plugin>smc_ros_hw_plugin/SMCDriverHardware</plugin>
+        <plugin>smc_l298n_ros_plugin/SMCHardwareDriver</plugin>
         <param name="motorA_wheel_name">left_wheel_joint</param>
         <param name="motorB_wheel_name">right_wheel_joint</param>
         <param name="port">/dev/ttyUSB0</param>

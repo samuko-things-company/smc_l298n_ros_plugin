@@ -1,0 +1,9 @@
+<library path="smc_l298n_ros_plugin">
+  <class name="smc_l298n_ros_plugin/SMCHardwareDriver"
+         type="smc_l298n_ros_plugin::SMCHardwareDriver"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      The ros2 hardware interface plugin package for the smc_l298n_pid_driver module
+    </description>
+  </class>
+</library>

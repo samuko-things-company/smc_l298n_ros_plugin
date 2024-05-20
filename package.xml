@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
 
-  <name>smc_ros_hw_plugin</name>
+  <name>smc_l298n_ros_plugin</name>
   <version>1.0.0</version>
   <description>The ros2 hardware interface plugin package for the smc_driver_module</description>
 

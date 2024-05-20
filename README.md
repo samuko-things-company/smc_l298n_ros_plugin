@@ -19,26 +19,26 @@
 
 - In the src/ folder of your ros workspace, clone the repo (or you can download and add it manually to the src/ folder)
   ```shell
-  git clone -b humble https://github.com/samuko-things-company/smc_ros_hw_plugin.git
+  git clone -b humble https://github.com/samuko-things-company/smc_l298n_ros_plugin.git
   ```
 
-- cd into the package folder (i.e `smc_ros_hw_plugin`) and run rosdep to install any necessary ros dependencies
+- cd into the package folder (i.e `smc_l298n_ros_plugin`) and run rosdep to install any necessary ros dependencies
   ```shell
-  cd smc_ros_hw_plugin
+  cd smc_l298n_ros_plugin
   rosdep install --from-paths src --ignore-src -r -y
   ```
 
 - build the packages with colcon (in the root folder of your ros workspace):
   ```shell
-  colcon build --packages-select smc_ros_hw_plugin
+  colcon build --packages-select smc_l298n_ros_plugin
   ```
-  > **NOTE:** the **smc_ros_hw_plugin** hardware interface will now be available for use in any project in your ros workspace.
+  > **NOTE:** the **smc_l298n_ros_plugin** hardware interface will now be available for use in any project in your ros workspace.
 
 - finally, don't forget to source your ros workspace
 
 </br>
 
-> *check the **`example_file`** in the **`smc_ros_hw_plugin`** pkg file to see the sample xacro file you can use in your own URDF controller file (for a differential drive robot)*
+> *check the **`example_file`** in the **`smc_l298n_ros_plugin`** pkg file to see the sample xacro file you can use in your own URDF controller file (for a differential drive robot)*
 >
 > AND
 >
