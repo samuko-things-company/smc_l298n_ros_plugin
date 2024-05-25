@@ -60,17 +60,17 @@ public:
 
 
   bool sendTargetVel(float valA=0.0, float valB=0.0){
-    return send("tag", valA, valB);
+    return send("/tag", valA, valB);
   }
 
 
   bool sendPwm(int valA=0, int valB=0){
-    return send("pwm", valA, valB);
+    return send("/pwm", valA, valB);
   }
 
 
   void getMotorsPos(float &angPosA, float &angPosB){
-    get("pos");
+    get("/pos");
 
     angPosA = val[0];
     angPosB = val[1];
@@ -81,7 +81,7 @@ public:
 
 
   void getMotorsVel(float &angVelA, float &angVelB){
-    get("vel");
+    get("/vel");
     
     angVelA = val[0];
     angVelB = val[1];
@@ -92,7 +92,7 @@ public:
 
 
   void getMotorAData(float &angPos, float &angVel){
-    get("dataA");
+    get("/dataA");
     
     angPos = val[0];
     angVel = val[1];
@@ -103,7 +103,7 @@ public:
 
 
   void getMotorBData(float &angPos, float &angVel){
-    get("dataB");
+    get("/dataB");
     
     angPos = val[0];
     angVel = val[1];
