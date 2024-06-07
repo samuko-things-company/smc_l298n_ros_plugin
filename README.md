@@ -17,14 +17,16 @@
   rosdep update
   ```
 
-- In the src/ folder of your ros workspace, clone the repo (or you can download and add it manually to the src/ folder)
+- In the `src/` folder of your `ros workspace`, clone the repo
+  (or you can download and add it manually to the `src/` folder)
+  > *NOTE: if you download it, extract it and change the folder name to `smc_l298n_ros_plugin` before moving it to the `src/` folder*
   ```shell
   git clone -b humble https://github.com/samuko-things-company/smc_l298n_ros_plugin.git
   ```
 
-- cd into the package folder (i.e `smc_l298n_ros_plugin`) and run rosdep to install any necessary ros dependencies
+- from the `src/` folder, cd into the root directory of your `ros workspace` and run rosdep to install all necessary ros dependencies
   ```shell
-  cd smc_l298n_ros_plugin
+  cd ../
   rosdep install --from-paths src --ignore-src -r -y
   ```
 
@@ -34,7 +36,7 @@
   ```
   > **NOTE:** the **smc_l298n_ros_plugin** hardware interface will now be available for use in any project in your ros workspace.
 
-- finally, don't forget to source your ros workspace
+- finally, don't forget to `source` your `ros workspace`
 
 </br>
 
@@ -42,7 +44,7 @@
 >
 > AND
 >
-> check the [**`smc_test_bot`**](https://github.com/samuko-things-company/smc_test_bot) pkg to see a sample robot to test the smc driver module.
+> check the [**`smc_diff_bot`**](https://github.com/samuko-things-company/smc_diff_bot/tree/humble) pkg to see a sample robot to test the smc driver module.
 
 </br>
 
